@@ -1,0 +1,121 @@
+.index-bc{
+	height:350px;
+	width:1000px;
+	margin-top:2px;
+	border-top:#CCC thin solid;
+	}
+.index-bc-left{
+	float:left;
+	height:300px;
+	width:250px;
+	margin-left:25px;
+	margin-top:4px;
+	border:#F90 thick solid;
+	   -moz-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.4);
+	box-shadow: 0 1px 10px rgba(0, 0, 0, 0.4);
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	
+	}
+.index-bc-right{
+	float:left;
+	height:300px;
+	width:700px;
+	}
+	
+	
+.index-cg-right{
+	float:left;
+	width:640px;
+	margin:4px 0 0 30px;
+	height:700px;
+	}
+.index-cg-car-t{
+	font-size:22px;
+	height:30px;
+	padding:5px 0 0 4px;
+	color:#D56A00;
+	border-top:#F90 medium solid;
+	border-bottom:#dddddd 2px solid;
+	}
+.index-cg-menu-b{
+	height:170px;
+	}
+
+	
+	
+	
+	
+/* quotation */
+#quotation{width:230px;height:270px;overflow:hidden;padding:10px; font-size:14px;}
+#quotation li{line-height:28px;padding-bottom:20px;}
+#quotation li .a-r{text-align:right;}
+#quotation li span{color:#999;margin:0 0 0 10px;}
+
+/* menu */
+.index-cg{
+	width:1000px;
+	padding-left:28px;
+	height:300px;
+	}
+.index-cg-left{
+	float:left;
+	height:300px;
+	width:250px;
+	margin-top:4px;
+	}
+.index-cg-t{
+	font-size:22px;
+	height:30px;
+	padding:5px 0 0 4px;
+	color:#D56A00;
+	border-top:#F90 medium solid;
+	}
+.ui-menu { width: 250px; }
+
+/* carousel */
+.list_carousel {
+				margin: 5px 0 30px 0;
+				width: 630px;
+				height: 130px;
+				border-left:#F90 thin solid;
+}
+.list_carousel ul {
+				padding: 0;
+				margin: 0 0 0 10px;
+				list-style: none;
+				display: block;
+			}
+.list_carousel li {
+				font-size: 40px;
+				color: #999;
+				text-align: center;
+				border: 1px solid #FC9;
+				width: 140px;
+				height: 120px;
+				padding: 0;
+				margin: 5px;
+				display: block;
+				float: left;
+				overflow:hidden;
+			}
+
+.pagination {
+	text-align: center;
+	float:right;
+}
+.pagination a {
+	background-color:#D1D1D1;
+	width: 12px;
+	height: 12px;
+	margin: 0 5px 0 0;
+	display: inline-block;
+}
+.pagination a.selected {
+	background-color:#FC3;
+	cursor: default;
+}
+.pagination a span {
+	display: none;
+}

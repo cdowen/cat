@@ -46,6 +46,7 @@ class user_m extends CI_Model {
      * 创建用户
      * @param type $pwd
      * @param type $nickname
+     * @param type $mail
      * @param type $birthday
      */
     
@@ -70,5 +71,20 @@ class user_m extends CI_Model {
         
         $this->db
                 ->insert('user',$post);
+    }
+    /**
+     * 修改用户邮箱和生日
+     *@param type $id
+     *@param type $mail
+     *@param type $birthday
+     */
+    
+    function modify_user($id, $mail = '', $birthday = '') {
+      if (!is_null($mail))
+	$data['mail'] = $mail;
+      if (!is_null($birthday))
+	$data['birthday'] = $birthday;
+      $this->db->where(array('id' => $id))
+	->update('user', $data);	
     }
 }

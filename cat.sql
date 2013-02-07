@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2013 年 02 月 07 日 12:26
+-- 生成日期: 2013 年 02 月 07 日 12:51
 -- 服务器版本: 5.5.29-0ubuntu0.12.10.1
 -- PHP 版本: 5.4.6-1ubuntu1.1
 
@@ -232,14 +232,14 @@ CREATE TABLE IF NOT EXISTS `stock` (
 --
 -- 表的结构 `user`
 --
--- 创建时间: 2013 年 02 月 07 日 04:23
+-- 创建时间: 2013 年 02 月 07 日 04:35
 --
 
 CREATE TABLE IF NOT EXISTS `user` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `nickname` varchar(20) NOT NULL,
   `pwd` varchar(40) NOT NULL,
-  `contact` varchar(32) NOT NULL,
+  `mail` varchar(50) NOT NULL,
   `birthday` date NOT NULL,
   `point` int(11) unsigned NOT NULL,
   PRIMARY KEY (`id`),
@@ -251,11 +251,12 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 -- 表的结构 `user_contact`
 --
--- 创建时间: 2013 年 02 月 07 日 03:23
+-- 创建时间: 2013 年 02 月 07 日 04:31
 --
 
 CREATE TABLE IF NOT EXISTS `user_contact` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `uid` int(10) unsigned NOT NULL,
   `name` varchar(20) NOT NULL,
   `tel` varchar(11) NOT NULL,
   `mail` varchar(50) NOT NULL,

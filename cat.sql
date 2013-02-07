@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2013 年 02 月 06 日 12:14
+-- 生成日期: 2013 年 02 月 07 日 12:26
 -- 服务器版本: 5.5.29-0ubuntu0.12.10.1
 -- PHP 版本: 5.4.6-1ubuntu1.1
 
@@ -55,6 +55,23 @@ CREATE TABLE IF NOT EXISTS `goods_class` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(24) NOT NULL,
   `parent` varchar(12) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `id` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `like`
+--
+-- 创建时间: 2013 年 02 月 07 日 04:24
+--
+
+CREATE TABLE IF NOT EXISTS `like` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `uid` int(11) NOT NULL,
+  `gid` int(11) NOT NULL,
+  `date` date NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
@@ -120,18 +137,18 @@ CREATE TABLE IF NOT EXISTS `pic` (
 --
 -- 表的结构 `session`
 --
--- 创建时间: 2013 年 02 月 05 日 15:25
+-- 创建时间: 2013 年 02 月 07 日 03:32
 --
 
 CREATE TABLE IF NOT EXISTS `session` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `date` datetime NOT NULL,
-  `valid` varchar(32) NOT NULL,
-  `cart` varchar(240) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `valid` (`valid`),
-  KEY `id` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  `session_id` varchar(40) NOT NULL DEFAULT '0',
+  `ip_address` varchar(16) NOT NULL DEFAULT '0',
+  `user_agent` varchar(120) NOT NULL,
+  `last_activity` int(10) unsigned NOT NULL DEFAULT '0',
+  `user_data` text NOT NULL,
+  PRIMARY KEY (`session_id`),
+  KEY `last_activity_idx` (`last_activity`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -162,7 +179,7 @@ CREATE TABLE IF NOT EXISTS `staff` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(24) NOT NULL,
   `pass` varchar(32) NOT NULL,
-  `sclass` int(10) unsigned NOT NULL,
+  `class` int(10) unsigned NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`),
   KEY `id` (`id`)
@@ -215,19 +232,17 @@ CREATE TABLE IF NOT EXISTS `stock` (
 --
 -- 表的结构 `user`
 --
--- 创建时间: 2013 年 02 月 05 日 15:01
+-- 创建时间: 2013 年 02 月 07 日 04:23
 --
 
 CREATE TABLE IF NOT EXISTS `user` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `uname` varchar(20) NOT NULL,
-  `pass` varchar(32) NOT NULL,
-  `contact` int(11) unsigned NOT NULL,
+  `nickname` varchar(20) NOT NULL,
+  `pwd` varchar(40) NOT NULL,
+  `contact` varchar(32) NOT NULL,
   `birthday` date NOT NULL,
-  `like` blob NOT NULL,
   `point` int(11) unsigned NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `uname` (`uname`),
   KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -236,12 +251,12 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 -- 表的结构 `user_contact`
 --
--- 创建时间: 2013 年 02 月 05 日 15:07
+-- 创建时间: 2013 年 02 月 07 日 03:23
 --
 
 CREATE TABLE IF NOT EXISTS `user_contact` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `uid` int(10) unsigned NOT NULL,
+  `name` varchar(20) NOT NULL,
   `tel` varchar(11) NOT NULL,
   `mail` varchar(50) NOT NULL,
   `address` varchar(80) NOT NULL,

@@ -19,8 +19,8 @@ class user_m extends CI_Model {
                 ->where(array('id' => $id))
                 ->get('user');
 
-        if (count($result) > 0)
-            return $result[0];
+        if ($result->num_rows() > 0)
+            return $result->result_array()[0];
         else
             return null;
     }
@@ -36,8 +36,8 @@ class user_m extends CI_Model {
                 ->where(array('name' => $name))
                 ->get('user');
 
-        if (count($result) > 0)
-            return $result[0];
+        if ($result->num_rows() > 0)
+            return $result->result_array()[0];
         else
             return null;
     }

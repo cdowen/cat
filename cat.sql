@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2013 年 02 月 07 日 12:51
+-- 生成日期: 2013 年 02 月 07 日 20:48
 -- 服务器版本: 5.5.29-0ubuntu0.12.10.1
 -- PHP 版本: 5.4.6-1ubuntu1.1
 
@@ -25,14 +25,14 @@ SET time_zone = "+00:00";
 --
 -- 表的结构 `goods`
 --
--- 创建时间: 2013 年 02 月 05 日 15:14
+-- 创建时间: 2013 年 02 月 07 日 12:47
 --
 
+DROP TABLE IF EXISTS `goods`;
 CREATE TABLE IF NOT EXISTS `goods` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
   `classid` int(10) unsigned NOT NULL,
-  `pid` int(10) unsigned NOT NULL,
   `price` float(7,3) NOT NULL,
   `left` int(10) unsigned NOT NULL,
   `sold` int(10) unsigned NOT NULL,
@@ -51,6 +51,7 @@ CREATE TABLE IF NOT EXISTS `goods` (
 -- 创建时间: 2013 年 02 月 05 日 15:17
 --
 
+DROP TABLE IF EXISTS `goods_class`;
 CREATE TABLE IF NOT EXISTS `goods_class` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(24) NOT NULL,
@@ -67,6 +68,7 @@ CREATE TABLE IF NOT EXISTS `goods_class` (
 -- 创建时间: 2013 年 02 月 07 日 04:24
 --
 
+DROP TABLE IF EXISTS `like`;
 CREATE TABLE IF NOT EXISTS `like` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `uid` int(11) NOT NULL,
@@ -86,6 +88,7 @@ CREATE TABLE IF NOT EXISTS `like` (
 -- 最后检查: 2013 年 02 月 06 日 03:03
 --
 
+DROP TABLE IF EXISTS `message`;
 CREATE TABLE IF NOT EXISTS `message` (
   `uid` int(11) NOT NULL,
   `time` datetime NOT NULL,
@@ -106,6 +109,7 @@ CREATE TABLE IF NOT EXISTS `message` (
 -- 创建时间: 2013 年 02 月 05 日 15:28
 --
 
+DROP TABLE IF EXISTS `order`;
 CREATE TABLE IF NOT EXISTS `order` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `uid` int(11) NOT NULL,
@@ -124,6 +128,7 @@ CREATE TABLE IF NOT EXISTS `order` (
 -- 创建时间: 2013 年 02 月 05 日 15:23
 --
 
+DROP TABLE IF EXISTS `pic`;
 CREATE TABLE IF NOT EXISTS `pic` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `type` tinyint(4) NOT NULL,
@@ -140,6 +145,7 @@ CREATE TABLE IF NOT EXISTS `pic` (
 -- 创建时间: 2013 年 02 月 07 日 03:32
 --
 
+DROP TABLE IF EXISTS `session`;
 CREATE TABLE IF NOT EXISTS `session` (
   `session_id` varchar(40) NOT NULL DEFAULT '0',
   `ip_address` varchar(16) NOT NULL DEFAULT '0',
@@ -159,6 +165,7 @@ CREATE TABLE IF NOT EXISTS `session` (
 -- 最后更新: 2013 年 02 月 06 日 03:04
 --
 
+DROP TABLE IF EXISTS `settings`;
 CREATE TABLE IF NOT EXISTS `settings` (
   `logo` blob NOT NULL,
   `goods` blob NOT NULL,
@@ -175,6 +182,7 @@ CREATE TABLE IF NOT EXISTS `settings` (
 -- 最后更新: 2013 年 02 月 06 日 03:03
 --
 
+DROP TABLE IF EXISTS `staff`;
 CREATE TABLE IF NOT EXISTS `staff` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(24) NOT NULL,
@@ -194,6 +202,7 @@ CREATE TABLE IF NOT EXISTS `staff` (
 -- 最后更新: 2013 年 02 月 06 日 04:11
 --
 
+DROP TABLE IF EXISTS `staffclass`;
 CREATE TABLE IF NOT EXISTS `staffclass` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(20) NOT NULL,
@@ -218,6 +227,7 @@ CREATE TABLE IF NOT EXISTS `staffclass` (
 -- 创建时间: 2013 年 02 月 06 日 02:45
 --
 
+DROP TABLE IF EXISTS `stock`;
 CREATE TABLE IF NOT EXISTS `stock` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `staff` int(10) unsigned NOT NULL,
@@ -235,6 +245,7 @@ CREATE TABLE IF NOT EXISTS `stock` (
 -- 创建时间: 2013 年 02 月 07 日 04:35
 --
 
+DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `nickname` varchar(20) NOT NULL,
@@ -254,6 +265,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 -- 创建时间: 2013 年 02 月 07 日 04:31
 --
 
+DROP TABLE IF EXISTS `user_contact`;
 CREATE TABLE IF NOT EXISTS `user_contact` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `uid` int(10) unsigned NOT NULL,

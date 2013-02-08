@@ -14,15 +14,15 @@ class user_m extends CI_Model {
      * @param type $id
      * @return array
      */
-    function get_user_by_id($id) {
-        $result = $this->db
-                ->where(array('id' => $id))
-                ->get('user');
+    function get_by_id($id) {
+      $result = $this->db
+        ->where(array('id' => $id))
+        ->get('user');
 
-        if ($result->num_rows() > 0)
-            return $result->result_array()[0];
-        else
-            return null;
+      if ($result->num_rows() > 0)
+        return $result->result_array()[0];
+      else
+        return null;
     }
 
     /**
@@ -31,15 +31,15 @@ class user_m extends CI_Model {
      * @param type $name
      * @return array
      */
-    function get_user_by_name($name) {
-        $result = $this->db
-                ->where(array('name' => $name))
-                ->get('user');
+    function get_by_name($name) {
+      $result = $this->db
+        ->where(array('name' => $name))
+        ->get('user');
 
-        if ($result->num_rows() > 0)
-            return $result->result_array()[0];
-        else
-            return null;
+      if ($result->num_rows() > 0)
+        return $result->result_array()[0];
+      else
+        return null;
     }
     
     /**
@@ -50,27 +50,23 @@ class user_m extends CI_Model {
      * @param type $birthday
      */
     
-    function create_user($nickname, $pwd, $mail, $birthday='') {
-        if (is_null($nickname))
-            return 'e_null_name';
-        if (is_null($pwd))
-            return 'e_null_pwd';
-	$this->db->where(array('nickname' => $nickname))
-	  ->or_where(array('mail' => $mail))
-	  ->from('user');
-	if ($this->db->count_all_results('user')!=0)
-	    return 'e_already_exists';
-        $pwd = sha1($pwd);
-        $post = array(
-            'pwd' => $pwd,
-            'nickname' => $nickname,
-            'birthday' => $birthday,
-	    'mail'=> $mail,
-	    'point'=>'0'
-        );
+    function create($nickname, $pwd, $mail, $birthday='') {
+	    $this->db->where(array('nickname' => $nickname))
+        ->or_where(array('mail' => $mail))
+        ->from('user');
+	    if ($this->db->count_all_results('user')!=0)
+	      return 'e_already_exists';
+      $pwd = sha1($pwd);
+      $post = array(
+        'pwd' => $pwd,
+        'nickname' => $nickname,
+        'birthday' => $birthday,
+	      'mail'=> $mail,
+	      'point'=>'0'
+      );
         
-        $this->db
-                ->insert('user',$post);
+      $this->db
+        ->insert('user',$post);
     }
     /**
      * 修改用户邮箱和生日
@@ -79,12 +75,12 @@ class user_m extends CI_Model {
      *@param type $birthday
      */
     
-    function modify_user($id, $mail = '', $birthday = '') {
+    function modify($id, $mail = '', $birthday = '') {
       if (!is_null($mail))
-	$data['mail'] = $mail;
+        $data['mail'] = $mail;
       if (!is_null($birthday))
-	$data['birthday'] = $birthday;
+        $data['birthday'] = $birthday;
       $this->db->where(array('id' => $id))
-	->update('user', $data);	
+        ->update('user', $data);	
     }
 }

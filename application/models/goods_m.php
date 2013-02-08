@@ -1,9 +1,9 @@
-﻿<?php
+﻿<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Goods_m extends CI_Model {
 	function __construct() {
 		parent::__construct();
-        $this->load->database();
+                $this->load->database();
 	}
 	/*通过id获取商品信息*/
 	function get_goods_by_id($id) {

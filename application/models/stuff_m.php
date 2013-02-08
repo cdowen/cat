@@ -13,7 +13,7 @@ class stuff_m extends CI_model {
   *@param type $id
   */
   
-  function get_staff($id){
+  function get_by_id($id){
     $result = $this->db
             ->where(array('id' => $id))
             ->get('staff');
@@ -29,7 +29,7 @@ class stuff_m extends CI_model {
   *@param type $name
   */
     
-  function get_staff_by_name($name){
+  function get_by_name($name){
     $result = $this->db
 	      ->where(array('name' => $name))
 	      ->get('staff');
@@ -40,7 +40,7 @@ class stuff_m extends CI_model {
        return null;
   }
   
-  function add_staff($name, $pwd, $power) {
+  function create($name, $pwd, $power) {
     $result = $this->db
         ->insert()
   }

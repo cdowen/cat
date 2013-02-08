@@ -16,19 +16,19 @@
 	border-radius:5px;
 	-moz-border-radius:5px;
 	-webkit-border-radius:5px;
-	
 	}
 .index-bc-right{
 	float:left;
 	height:300px;
 	width:700px;
+	margin-left:10px;
 	}
 	
 	
 .index-cg-right{
 	float:left;
 	width:640px;
-	margin:4px 0 0 30px;
+	margin:4px 0 0 50px;
 	height:700px;
 	}
 .index-cg-car-t{
@@ -40,28 +40,17 @@
 	border-bottom:#dddddd 2px solid;
 	}
 .index-cg-menu-b{
-	height:170px;
+	height:274px;
 	}
 
-	
-	
-	
-	
-/* quotation */
-#quotation{width:230px;height:270px;overflow:hidden;padding:10px; font-size:14px;}
-#quotation li{line-height:28px;padding-bottom:20px;}
-#quotation li .a-r{text-align:right;}
-#quotation li span{color:#999;margin:0 0 0 10px;}
-
-/* menu */
 .index-cg{
 	width:1000px;
 	padding-left:28px;
-	height:300px;
+	height:650px;
 	}
 .index-cg-left{
 	float:left;
-	height:300px;
+	height:390px;
 	width:250px;
 	margin-top:4px;
 	}
@@ -71,7 +60,21 @@
 	padding:5px 0 0 4px;
 	color:#D56A00;
 	border-top:#F90 medium solid;
-	}
+	}	
+.index-cg-h{
+	width:250px;
+	height:150px;
+	}	
+	
+	
+/* quotation */
+#quotation{width:230px;height:270px;overflow:hidden;padding:10px; font-size:14px;}
+#quotation li{line-height:28px;padding-bottom:20px;}
+#quotation li .a-r{text-align:right;}
+#quotation li span{color:#999;margin:0 0 0 10px;}
+
+/* menu */
+
 .ui-menu { width: 250px; }
 
 /* carousel */
@@ -100,7 +103,10 @@
 				float: left;
 				overflow:hidden;
 			}
-
+/**/
+#foo3 li{width: 220px;
+				height: 220px;
+	}
 .pagination {
 	text-align: center;
 	float:right;

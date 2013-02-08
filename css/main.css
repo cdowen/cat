@@ -90,3 +90,31 @@
 	width:37px;
 	border:none;
 	}
+.bottom{
+	float:left;
+	width:1000px;
+	}
+.bottom-item{
+	border-top:#F90 2px solid;
+	padding-top:20px;
+	text-align:center;
+	font-size:10px;
+	color:#FF9428;
+	}
+.bottom-item a{
+	font-size:12px;
+	text-decoration:none;
+	color:#C66300;
+	}
+.bottom-line{
+	color:#F90;
+	text-align:center;
+	
+	}
+.bottom-w{
+	text-align:center;
+	font-size:10px;
+	color:#999;
+	margin-top:5px;
+	margin-bottom:30px;
+	}

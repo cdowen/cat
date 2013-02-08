@@ -36,3 +36,13 @@ $('#foo1').carouFredSel({
 	   pagination  : "#foo1_pag"
 
 	});
+$('#foo2').carouFredSel({
+	   "scroll": {"duration" : 1000 ,"pauseOnHover":true},
+	   pagination  : "#foo2_pag"
+
+	});
+$('#foo3').carouFredSel({
+	   "scroll": {"duration" : 1000 ,"pauseOnHover":true},
+	   pagination  : "#foo3_pag"
+
+	});

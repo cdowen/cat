@@ -68,18 +68,18 @@ class user_m extends CI_Model {
      */
     
     function create($nickname, $pwd, $mail, $birthday='') {
-	    $this->db->where(array('nickname' => $nickname))
+      $this->db->where(array('nickname' => $nickname))
         ->or_where(array('mail' => $mail))
         ->from('user');
-	    if ($this->db->count_all_results('user')!=0)
-	      return 'e_already_exists';
+      if ($this->db->count_all_results('user')!=0)
+        return 'e_already_exists';
       $pwd = sha1($pwd);
       $post = array(
         'pwd' => $pwd,
         'nickname' => $nickname,
         'birthday' => $birthday,
-	      'mail'=> $mail,
-	      'point'=>'0'
+        'mail'=> $mail,
+        'point'=>'0'
       );
         
       $this->db

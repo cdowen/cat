@@ -27,6 +27,17 @@ class Goods_m extends CI_Model {
         else
             return null;
 	}
+	/*通过classid获取某一分类下所有商品信息*/
+	function get_allgoods_by_classid($classid){
+		$result = $this->db
+				->where(array('classid' => $classid))
+				->get('goods');
+				
+        if ($result->num_rows() > 0)
+            return $result->result();
+        else
+            return null;
+	}
 	/*
 		添加商品
 		销售量sold和被喜欢数liked默认为0
@@ -64,12 +75,20 @@ class Goods_m extends CI_Model {
 		$this->db->update('goods',$post);
 	}
 	/*
-		通过id删除商品
+		通过id删除某个商品
 	*/
 	function delete_goods_by_id($id)
 	{
 		$this->db->delete('goods', array('id' => $id));
 	}
+	/*
+		通过classid删除某一分类下的所有商品（当删除分类时使用）
+	*/
+	function delete_allgoods_by_classid($classid)
+	{
+		$this->db->delete('goods', array('classid' => $classid));
+	}
+	
 }
 
 ?>

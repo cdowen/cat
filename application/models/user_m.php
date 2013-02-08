@@ -109,6 +109,18 @@ class user_m extends CI_Model {
     }
     
     /**
+     * 删除用户
+     * 
+     * @param $id
+     */
+    
+    function remove($id){
+      $this->db
+        ->where(array('id'=>$id))
+        ->delete('user');
+    }
+    
+    /**
      * 根据用户id取得用户喜欢的商品
      * 
      * @param type $id
@@ -146,5 +158,17 @@ class user_m extends CI_Model {
         $this->db
           ->insert('like', $data);
       }
+    }
+    
+    /**
+     * 不喜欢
+     * @param $uid
+     * @param $gid
+     */
+    
+    function remove_like($uid, $gid) {
+      $this->db
+        ->where(array('uid'=>$uid, 'gid'=>$gid))
+        ->delete('like');
     }
 }

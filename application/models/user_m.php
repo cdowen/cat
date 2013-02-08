@@ -105,11 +105,12 @@ class user_m extends CI_Model {
         $data['birthday'] = $birthday;
       $this->db
         ->where(array('id' => $id))
+        ->limit(1)
         ->update('user', $data);	
     }
     
     /**
-     * 删除用户
+     * 删除用户,同时删除喜欢关系
      * 
      * @param $id
      */
@@ -117,7 +118,11 @@ class user_m extends CI_Model {
     function remove($id){
       $this->db
         ->where(array('id'=>$id))
+        ->limit(1)
         ->delete('user');
+      $this->db
+        ->where(array('uid'=>$id))
+        ->delete('like');
     }
     
     /**

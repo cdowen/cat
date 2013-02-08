@@ -26,17 +26,34 @@ class user_m extends CI_Model {
     }
 
     /**
-     * 通过用户名获取用户信息
+     * 通过用户名搜索用户
      * 
      * @param type $name
      * @return array
      */
     function get_by_name($name) {
       $result = $this->db
-        ->where(array('name' => $name))
+        ->like(array('name' => $name))
         ->get('user');
 
       if ($result->num_rows() > 0)
+        return $result->result_array();
+      else
+        return null;
+    }
+    
+    /**
+     * 根据用户注册邮箱获取用户
+     * 
+     *@param type $mail
+     */
+    
+    function get_by_mail($mail) {
+      $result = $this->db
+        ->where(array('mail'=>$mail))
+        get('user');
+        
+      if ($result->num_rows()>0)
         return $result->result_array()[0];
       else
         return null;
@@ -68,6 +85,7 @@ class user_m extends CI_Model {
       $this->db
         ->insert('user',$post);
     }
+    
     /**
      * 修改用户邮箱和生日
      *@param type $id

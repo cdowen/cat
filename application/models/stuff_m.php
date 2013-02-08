@@ -15,32 +15,33 @@ class stuff_m extends CI_model {
   
   function get_by_id($id){
     $result = $this->db
-            ->where(array('id' => $id))
-            ->get('staff');
+      ->where(array('id' => $id))
+      ->get('staff');
 
     if ($result->num_rows() > 0)
-       return $result->result_array()[0];
+      return $result->result_array()[0];
     else
-       return null;
+      return null;
   }
   
   /**
   *根据员工名得到员工
+  *
   *@param type $name
   */
     
   function get_by_name($name){
     $result = $this->db
-	      ->where(array('name' => $name))
-	      ->get('staff');
-	      
+      ->where(array('name' => $name))
+      ->get('staff');
+      
     if ($result->num_rows() > 0)
-       return $result->result_array()[0];
+      return $result->result_array()[0];
     else
-       return null;
+      return null;
   }
   
   function create($name, $pwd, $power) {
     $result = $this->db
-        ->insert()
+      ->insert()
   }

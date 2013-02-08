@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2013 年 02 月 07 日 20:48
+-- 生成日期: 2013 年 02 月 08 日 23:21
 -- 服务器版本: 5.5.29-0ubuntu0.12.10.1
 -- PHP 版本: 5.4.6-1ubuntu1.1
 
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 --
 -- 表的结构 `goods`
 --
--- 创建时间: 2013 年 02 月 07 日 12:47
+-- 创建时间: 2013 年 02 月 07 日 14:15
 --
 
 DROP TABLE IF EXISTS `goods`;
@@ -48,15 +48,32 @@ CREATE TABLE IF NOT EXISTS `goods` (
 --
 -- 表的结构 `goods_class`
 --
--- 创建时间: 2013 年 02 月 05 日 15:17
+-- 创建时间: 2013 年 02 月 08 日 14:47
 --
 
 DROP TABLE IF EXISTS `goods_class`;
 CREATE TABLE IF NOT EXISTS `goods_class` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(24) NOT NULL,
-  `parent` varchar(12) NOT NULL,
+  `parent` int(10) unsigned NOT NULL,
   PRIMARY KEY (`id`),
+  KEY `id` (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `goods_parent_class`
+--
+-- 创建时间: 2013 年 02 月 08 日 15:20
+--
+
+DROP TABLE IF EXISTS `goods_parent_class`;
+CREATE TABLE IF NOT EXISTS `goods_parent_class` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(24) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name` (`name`),
   KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
@@ -65,7 +82,7 @@ CREATE TABLE IF NOT EXISTS `goods_class` (
 --
 -- 表的结构 `like`
 --
--- 创建时间: 2013 年 02 月 07 日 04:24
+-- 创建时间: 2013 年 02 月 07 日 14:15
 --
 
 DROP TABLE IF EXISTS `like`;
@@ -83,9 +100,8 @@ CREATE TABLE IF NOT EXISTS `like` (
 --
 -- 表的结构 `message`
 --
--- 创建时间: 2013 年 02 月 06 日 03:03
--- 最后更新: 2013 年 02 月 06 日 03:03
--- 最后检查: 2013 年 02 月 06 日 03:03
+-- 创建时间: 2013 年 02 月 07 日 14:15
+-- 最后更新: 2013 年 02 月 07 日 14:15
 --
 
 DROP TABLE IF EXISTS `message`;
@@ -106,7 +122,7 @@ CREATE TABLE IF NOT EXISTS `message` (
 --
 -- 表的结构 `order`
 --
--- 创建时间: 2013 年 02 月 05 日 15:28
+-- 创建时间: 2013 年 02 月 07 日 14:15
 --
 
 DROP TABLE IF EXISTS `order`;
@@ -125,7 +141,7 @@ CREATE TABLE IF NOT EXISTS `order` (
 --
 -- 表的结构 `pic`
 --
--- 创建时间: 2013 年 02 月 05 日 15:23
+-- 创建时间: 2013 年 02 月 07 日 14:15
 --
 
 DROP TABLE IF EXISTS `pic`;
@@ -142,7 +158,7 @@ CREATE TABLE IF NOT EXISTS `pic` (
 --
 -- 表的结构 `session`
 --
--- 创建时间: 2013 年 02 月 07 日 03:32
+-- 创建时间: 2013 年 02 月 07 日 14:15
 --
 
 DROP TABLE IF EXISTS `session`;
@@ -161,8 +177,8 @@ CREATE TABLE IF NOT EXISTS `session` (
 --
 -- 表的结构 `settings`
 --
--- 创建时间: 2013 年 02 月 06 日 03:04
--- 最后更新: 2013 年 02 月 06 日 03:04
+-- 创建时间: 2013 年 02 月 07 日 14:15
+-- 最后更新: 2013 年 02 月 07 日 14:15
 --
 
 DROP TABLE IF EXISTS `settings`;
@@ -178,8 +194,8 @@ CREATE TABLE IF NOT EXISTS `settings` (
 --
 -- 表的结构 `staff`
 --
--- 创建时间: 2013 年 02 月 06 日 03:03
--- 最后更新: 2013 年 02 月 06 日 03:03
+-- 创建时间: 2013 年 02 月 07 日 14:15
+-- 最后更新: 2013 年 02 月 07 日 14:15
 --
 
 DROP TABLE IF EXISTS `staff`;
@@ -191,15 +207,15 @@ CREATE TABLE IF NOT EXISTS `staff` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`),
   KEY `id` (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8001 ;
 
 -- --------------------------------------------------------
 
 --
 -- 表的结构 `staffclass`
 --
--- 创建时间: 2013 年 02 月 06 日 04:11
--- 最后更新: 2013 年 02 月 06 日 04:11
+-- 创建时间: 2013 年 02 月 07 日 14:15
+-- 最后更新: 2013 年 02 月 07 日 14:15
 --
 
 DROP TABLE IF EXISTS `staffclass`;
@@ -224,7 +240,7 @@ CREATE TABLE IF NOT EXISTS `staffclass` (
 --
 -- 表的结构 `stock`
 --
--- 创建时间: 2013 年 02 月 06 日 02:45
+-- 创建时间: 2013 年 02 月 07 日 14:15
 --
 
 DROP TABLE IF EXISTS `stock`;
@@ -242,7 +258,7 @@ CREATE TABLE IF NOT EXISTS `stock` (
 --
 -- 表的结构 `user`
 --
--- 创建时间: 2013 年 02 月 07 日 04:35
+-- 创建时间: 2013 年 02 月 07 日 14:15
 --
 
 DROP TABLE IF EXISTS `user`;
@@ -262,7 +278,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 -- 表的结构 `user_contact`
 --
--- 创建时间: 2013 年 02 月 07 日 04:31
+-- 创建时间: 2013 年 02 月 07 日 14:15
 --
 
 DROP TABLE IF EXISTS `user_contact`;

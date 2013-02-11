@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2013 年 02 月 08 日 23:24
+-- 生成日期: 2013 年 02 月 11 日 14:43
 -- 服务器版本: 5.5.29-0ubuntu0.12.10.1
 -- PHP 版本: 5.4.6-1ubuntu1.1
 
@@ -58,7 +58,7 @@ CREATE TABLE IF NOT EXISTS `goods_class` (
   `parent` int(10) unsigned NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -213,22 +213,24 @@ CREATE TABLE IF NOT EXISTS `staff` (
 --
 -- 表的结构 `staffclass`
 --
--- 创建时间: 2013 年 02 月 07 日 14:15
--- 最后更新: 2013 年 02 月 07 日 14:15
+-- 创建时间: 2013 年 02 月 11 日 06:40
+-- 最后更新: 2013 年 02 月 11 日 06:40
+-- 最后检查: 2013 年 02 月 11 日 06:40
 --
 
 DROP TABLE IF EXISTS `staffclass`;
 CREATE TABLE IF NOT EXISTS `staffclass` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(20) NOT NULL,
-  `change_goods` tinyint(4) NOT NULL,
-  `change_goods_num` tinyint(4) NOT NULL,
-  `change_class` tinyint(4) NOT NULL,
-  `change_user` tinyint(4) NOT NULL,
-  `confirm_order` tinyint(4) NOT NULL,
-  `change_stock` tinyint(4) NOT NULL,
-  `change_staff` tinyint(4) NOT NULL,
-  `reply` tinyint(4) NOT NULL,
+  `change_goods` tinyint(1) NOT NULL,
+  `change_goods_num` tinyint(1) NOT NULL,
+  `change_class` tinyint(1) NOT NULL,
+  `change_user` tinyint(1) NOT NULL,
+  `confirm_order` tinyint(1) NOT NULL,
+  `change_stock` tinyint(1) NOT NULL,
+  `change_staff` tinyint(1) NOT NULL,
+  `reply` tinyint(1) NOT NULL,
+  `view_info` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`),
   KEY `id` (`id`)

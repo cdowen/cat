@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2013 年 02 月 11 日 14:43
+-- 生成日期: 2013 年 02 月 11 日 22:18
 -- 服务器版本: 5.5.29-0ubuntu0.12.10.1
 -- PHP 版本: 5.4.6-1ubuntu1.1
 
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 --
 -- 表的结构 `goods`
 --
--- 创建时间: 2013 年 02 月 07 日 14:15
+-- 创建时间: 2013 年 02 月 11 日 14:16
 --
 
 DROP TABLE IF EXISTS `goods`;
@@ -82,13 +82,13 @@ CREATE TABLE IF NOT EXISTS `goods_parent_class` (
 --
 -- 表的结构 `like`
 --
--- 创建时间: 2013 年 02 月 08 日 15:23
+-- 创建时间: 2013 年 02 月 11 日 14:17
 --
 
 DROP TABLE IF EXISTS `like`;
 CREATE TABLE IF NOT EXISTS `like` (
-  `uid` int(11) NOT NULL,
-  `gid` int(11) NOT NULL,
+  `uid` int(10) NOT NULL,
+  `gid` int(10) NOT NULL,
   `date` date NOT NULL,
   KEY `uid` (`uid`),
   KEY `gid` (`gid`)
@@ -105,7 +105,7 @@ CREATE TABLE IF NOT EXISTS `like` (
 
 DROP TABLE IF EXISTS `message`;
 CREATE TABLE IF NOT EXISTS `message` (
-  `uid` int(11) NOT NULL,
+  `uid` int(10) NOT NULL,
   `time` datetime NOT NULL,
   `content` mediumblob NOT NULL,
   `sid` datetime NOT NULL,
@@ -121,15 +121,15 @@ CREATE TABLE IF NOT EXISTS `message` (
 --
 -- 表的结构 `order`
 --
--- 创建时间: 2013 年 02 月 07 日 14:15
+-- 创建时间: 2013 年 02 月 11 日 14:17
 --
 
 DROP TABLE IF EXISTS `order`;
 CREATE TABLE IF NOT EXISTS `order` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `uid` int(11) NOT NULL,
+  `uid` int(10) NOT NULL,
   `time` datetime NOT NULL,
-  `type` tinyint(4) NOT NULL,
+  `type` tinyint(1) NOT NULL,
   `content` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id` (`id`)
@@ -140,17 +140,16 @@ CREATE TABLE IF NOT EXISTS `order` (
 --
 -- 表的结构 `pic`
 --
--- 创建时间: 2013 年 02 月 07 日 14:15
+-- 创建时间: 2013 年 02 月 11 日 14:18
 --
 
 DROP TABLE IF EXISTS `pic`;
 CREATE TABLE IF NOT EXISTS `pic` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `type` tinyint(4) NOT NULL,
-  `content` mediumblob NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `id` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `gid` int(10) unsigned NOT NULL,
+  `type` tinyint(1) NOT NULL,
+  `content` varchar(50) NOT NULL,
+  KEY `gid` (`gid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -259,17 +258,17 @@ CREATE TABLE IF NOT EXISTS `stock` (
 --
 -- 表的结构 `user`
 --
--- 创建时间: 2013 年 02 月 07 日 14:15
+-- 创建时间: 2013 年 02 月 11 日 14:18
 --
 
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `nickname` varchar(20) NOT NULL,
   `pwd` varchar(40) NOT NULL,
   `mail` varchar(50) NOT NULL,
   `birthday` date NOT NULL,
-  `point` int(11) unsigned NOT NULL,
+  `point` int(10) unsigned NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;

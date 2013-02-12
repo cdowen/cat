@@ -17,6 +17,7 @@ class Pic_m extends CI_Model {
             return null;
 	}
 	/*通过id获得某个图片*/
+	/*
 	function get_pic_by_id($id)
 	{
 		$result = $this->db
@@ -27,6 +28,7 @@ class Pic_m extends CI_Model {
         else
             return null;
 	}
+	*/
 	/*通过id修改图片*/
 	function update_pic_by_gid($id,$type,$content)
 	{
@@ -48,11 +50,14 @@ class Pic_m extends CI_Model {
 		 $this->db
                 ->insert('pic',$post);
 	}
+	
 	/*通过id删除图片*/
+	/*
 	function delete_pic_by_id($id)
 	{
 		$this->db->delete('pic', array('id' => $id));
 	}
+	*/
 	/*通过gid删除某商品的所有图片*/
 	function delete_pic_by_gid($gid)
 	{

@@ -840,10 +840,10 @@ body .ui-tooltip {
 .ui-state-focus,
 .ui-widget-content .ui-state-focus,
 .ui-widget-header .ui-state-focus {
-	border: 2px solid #F90;
+	border: 1px solid #F90;
 	/*background: #fdf5ce url(images/ui-bg_glass_100_fdf5ce_1x400.png) 50% 50% repeat-x;*/
 	font-weight:bolder;
-	font-size:18px;
+	/*font-size:18px;*/
 	color: #c77405;
 }
 .ui-state-hover a,
@@ -1165,9 +1165,10 @@ body .ui-tooltip {
 
 /* Overlays */
 .ui-widget-overlay {
-	background: #666666 url(images/ui-bg_diagonals-thick_20_666666_40x40.png) 50% 50% repeat;
+	background:#000;opacity:.7;filter:Alpha(Opacity=70)
+	/*background: #666666 url(images/ui-bg_diagonals-thick_20_666666_40x40.png) 50% 50% repeat;
 	opacity: .5;
-	filter: Alpha(Opacity=50);
+	filter: Alpha(Opacity=50);*/
 }
 .ui-widget-shadow {
 	margin: -5px 0 0 -5px;

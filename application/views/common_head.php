@@ -12,7 +12,7 @@
 <link href="<?php echo $css; ?>" rel="stylesheet" type="text/css" />
 <?php endforeach; ?>
 <?php endif; ?>
-<?php if (isset($csses)): ?>
+<?php if (isset($jses)): ?>
 <?php foreach ($jses as $js): ?>
 <script type="text/javascript" src="<?php echo $js; ?>"></script>
 <?php endforeach; ?>

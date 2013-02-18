@@ -9,12 +9,12 @@
 <?php endif; ?>
 <?php if (isset($csses)): ?>
 <?php foreach ($csses as $css): ?>
-<link ref="stylesheet" type="text/css" href="<?php echo base_url("$css"); ?>" />
+<link href="<?php echo $css; ?>" ref="stylesheet" type="text/css" />
 <?php endforeach; ?>
 <?php endif; ?>
 <?php if (isset($csses)): ?>
 <?php foreach ($jses as $js): ?>
-<script type="text/javascript" src="<?php echo base_url("$js"); ?>"></script>
+<script type="text/javascript" src="<?php echo $js; ?>"></script>
 <?php endforeach; ?>
 <?php endif; ?>
 </head>

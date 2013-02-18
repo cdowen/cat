@@ -1,24 +1,4 @@
-  <link type="text/css" href="css/main.css" rel="stylesheet" />
- <link type="text/css" href="css/reset.css" rel="stylesheet" />
- <link type="text/css" href="css/shop.css" rel="stylesheet" />
- <link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.0.custom.css"/>
- 
-
-<!-- Start WOWSlider.com HEAD section -->
-  <link rel="stylesheet" type="text/css" href="engine10/style.css" media="screen" /> 
-  <script type="text/javascript" src="engine6/jquery.js"></script>
-        <script type="text/javascript" src="engine6/wowslider.js"></script>
-      <script type="text/javascript" src="engine6/script.js"></script>
-          <script src="js/jquery-1.9.0.js"></script> 
-    <script src="js/jquery-ui-1.10.0.custom.js"></script> 
-    <script type="text/javascript" language="javascript" src="js/jquery.carouFredSel-6.2.0-packed.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
-          <script type="text/javascript" src="engine6/wowslider.js"></script>
-      <script type="text/javascript" src="engine6/script.js"></script>
-        <!-- End WOWSlider.com BODY section -->
- 
- <!--broadcost-->
+  <!--broadcost-->
     <div class="index-bc">
       <div class="index-bc-left">
         <!--quotation -->

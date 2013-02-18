@@ -4,6 +4,11 @@
         <!--quotation -->
       <div id="quotation">
     <ul>
+    <?php if (isset($info_content)): ?>
+    <?php for ($i=1;$i<=count($info_content);$i++): ?>
+    <li><p><?php echo $i.'.'.$info_content[i]; ?></p></li>
+    <?php endfor; ?>
+    <?php endif; ?>
       <li>
         <p>1.jquery图片大小尺寸调整插件，自适应容器图片垂直居中,自定义图片大小尺寸宽度和高度...</p>
         

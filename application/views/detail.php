@@ -68,6 +68,3 @@
     </div>
   	<!--details end-->
 </div>
-</body>
-
-</html>

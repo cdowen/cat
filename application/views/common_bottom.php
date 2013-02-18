@@ -17,3 +17,5 @@
         </div>
     </div>
     <!--bottom end--> 
+    </body>
+    </html>

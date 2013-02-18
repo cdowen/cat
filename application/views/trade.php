@@ -101,6 +101,3 @@
   	<!--trade end-->
     
 </div>
-</body>
-
-</html>

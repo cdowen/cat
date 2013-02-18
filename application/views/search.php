@@ -64,6 +64,3 @@
     </div>
   	<!--search results end-->
 </div>
-</body>
-
-</html>

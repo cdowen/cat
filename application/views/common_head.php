@@ -2,8 +2,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>To Be filled</title>
+<?php if (isset($title)): ?>
+<title><?php=$title?></title>
+<?php else: ?>
+ <title>Cat</title>
+<?php endif; ?>
+<?php foreach ($csses as $css): ?>
+<link ref="stylesheet" type="text/css" href="<?php=base_url("$css")?>" />
 
+<?php foreach ($jses as $js): ?>
+<script type="text/javascript" src="<?php=base_url("$js")?>"></script>
+<?php endforeach; ?>
 </head>
 <body>
   <!--nav-->
@@ -29,7 +38,7 @@
       <div class="top-bs-title">
         有图片<br/>有图片<br/>有图片<br/>有图片<br/>有图片<br/>有图片<br/>有图片<br/>有图片<br/>有图片<br/>
         </div>
-        <div class="top-bs-brand">
+        <div class="top-bs-brand"> <title>ShareMySister</title>
         有图片<br/>有图片<br/>有图片<br/>有图片<br/>有图片<br/>有图片<br/>有图片<br/>有图片<br/>有图片<br/>
         </div>
         <div class="top-bs-search">

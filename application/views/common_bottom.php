@@ -16,7 +16,12 @@
         Powered by bitNP Tech.
         </div>
     </div>
-    <!--bottom end--> 
+    <!--bottom end-->
+    <?php if (isset($jses)): ?>
+<?php foreach ($jses as $js): ?>
+<script type="text/javascript" src="<?php echo $js; ?>"></script>
+<?php endforeach; ?>
+<?php endif; ?>
     </div>
     </body>
     </html>

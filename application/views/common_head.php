@@ -9,7 +9,7 @@
 <?php endif; ?>
 <?php if (isset($csses)): ?>
 <?php foreach ($csses as $css): ?>
-<link href="<?php echo $css; ?>" ref="stylesheet" type="text/css" />
+<link href="<?php echo $css; ?>" rel="stylesheet" type="text/css" />
 <?php endforeach; ?>
 <?php endif; ?>
 <?php if (isset($csses)): ?>

@@ -3,16 +3,20 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php if (isset($title)): ?>
-<title><?php=$title?></title>
+<title><?php echo $title; ?></title>
 <?php else: ?>
  <title>Cat</title>
 <?php endif; ?>
+<?php if (isset($csses)): ?>
 <?php foreach ($csses as $css): ?>
-<link ref="stylesheet" type="text/css" href="<?php=base_url("$css")?>" />
-
-<?php foreach ($jses as $js): ?>
-<script type="text/javascript" src="<?php=base_url("$js")?>"></script>
+<link ref="stylesheet" type="text/css" href="<?php echo base_url("$css"); ?>" />
 <?php endforeach; ?>
+<?php endif; ?>
+<?php if (isset($csses)): ?>
+<?php foreach ($jses as $js): ?>
+<script type="text/javascript" src="<?php echo base_url("$js"); ?>"></script>
+<?php endforeach; ?>
+<?php endif; ?>
 </head>
 <body>
   <!--nav-->

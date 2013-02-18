@@ -28,6 +28,9 @@
          <a href="#" class="top-nav-url">注册</a>
          </div>
          <div class="w-right">
+         <?php if (!isset($index)): ?>
+         <div class="top-nav-list"><a href="index.html" class="top-nav-url">首页</a></div>
+         <?php endif ;?>
          <div class="top-nav-list"><a href="#" class="top-nav-url">我的购物车</a></div>
          <div class="top-nav-list"> <a href="#" class="top-nav-url">我的订单</a></div>
          <div class="top-nav-list"> <a href="#" class="top-nav-url">我的收藏</a> </div>

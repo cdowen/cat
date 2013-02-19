@@ -4,8 +4,6 @@
  */
 
 #wowslider-container10 { 
-	width:400px;
-	height:310px;
 	zoom: 1; 
 	position: relative; 
 	max-width:400px;
@@ -51,7 +49,6 @@
 }
 #wowslider-container10 img{
 	max-width: none !important;
-	
 }
 #wowslider-container10 .ws_images img{
 	width:100%;
@@ -176,7 +173,7 @@
 	width:390px; 
 }
 #wowslider-container10 .ws_thumbs .ws_selthumb img{
-	border-color:#F90;/**/
+	border-color:#F90;/*:#444*/
 }
 
 #wowslider-container10 .ws_thumbs  a img{

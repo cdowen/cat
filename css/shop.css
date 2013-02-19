@@ -61,6 +61,7 @@
 	width:450px;
 	}
 .detail-title{
+	width:500px;
 	float:left;
 	margin-top:30px;
 	}
@@ -90,7 +91,6 @@
 	height:20px;
 	}
 .detail-down{
-	float:left;
 	height:30px;
 	color:#FFF;
 	}
@@ -159,19 +159,34 @@
 	float:left;
 	margin:20px;
 	}
+#add-address{
+	float:left;
+	}
 .trade-address-list{
-	border:#F60 medium solid;
-	background:#FFD8B0;
 	height:20px;
-	width:700px;
+	width:800px;
 	padding:10px;
 	margin:10px;
 	float:left;
+	cursor:pointer;
 	}
-
+.selected{
+	background:#FFD8B0;
+	border:#F60 medium solid;
+	}
+.unselected{
+	background:#FFF;
+	border:#F60 thin solid;
+}
 .trade-address-list li{
 	margin:0 10px;
 	}
+	
+.trade-address-list input{
+	left:-9999px;
+	position:absolute;
+	}
+	
 	
 	.ui-dialog .ui-state-hover{font-size:16px;}
     fieldset { padding:0; border:0; margin-top:25px; }
@@ -186,12 +201,17 @@
 	}
 #date{
 	width:270px;
-	height:32px;
-	font-size:16px;
+	height:28px;
+	font-size:14px;
 	}
 .trade-ok{
 	float:left;
 	width:900px;
 	text-align:right;
 	margin:50px;
+	}
+.trade-others{
+	float:left;
+	width:900px;
+	margin:20px;
 	}

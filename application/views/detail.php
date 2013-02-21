@@ -1,21 +1,3 @@
- <link type="text/css" href="css/main.css" rel="stylesheet" />
- <link type="text/css" href="css/reset.css" rel="stylesheet" />
- <link type="text/css" href="css/shop.css" rel="stylesheet" />
- <link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.0.custom.css"/>
- 
-
-<!-- Start WOWSlider.com HEAD section -->
-	<link rel="stylesheet" type="text/css" href="engine10/style.css" media="screen" />
-	<script type="text/javascript" src="engine10/jquery.js"></script>
-	   
-    <script src="js/jquery-1.9.0.js"></script> 
-    <script src="js/jquery-ui-1.10.0.custom.js"></script> 
-    <script type="text/javascript" src="js/main.js"></script>
-    <script type="text/javascript" src="js/shop.js"></script>
-      <script type="text/javascript" src="engine10/wowslider.js"></script>
-  <script type="text/javascript" src="engine10/script.js"></script>
-<!-- End WOWSlider.com HEAD section -->
-    
   	<!--details-->
     <div class="detail">
     	<div class="detail-pic">

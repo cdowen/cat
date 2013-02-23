@@ -25,14 +25,15 @@ class cat extends CI_Controller {
     
     $this->load->model('pic_m');
     $fetured_goods = $this->settings_m->get_goods();
-    pics=array();
+    $pics=array();
     foreach ($pergoods as $fetured_goods) {
       $pic = $this->pic_m->get_pic_by_gid($pergoods);
       array_filter($pic, "_goods_callback")//filter all big picture.
-      $pics[$pergoods] = $pic[0]['content'];
-    }//caca,没测试过，先到这吧……
+      $pics[][$pergoods] = $pic[0]['content'];
+    }
+    $index_data['fetured_pics'] = $pics;
     
     $this->load->view('common_head', $head_data);
-    $this->load->view('index', );
+    $this->load->view('index', $index_data);
     $this->load->view('common_bottom');
   }

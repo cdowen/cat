@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2013 年 02 月 11 日 22:18
+-- 生成日期: 2013 年 02 月 24 日 22:54
 -- 服务器版本: 5.5.29-0ubuntu0.12.10.1
 -- PHP 版本: 5.4.6-1ubuntu1.1
 
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 --
 -- 表的结构 `goods`
 --
--- 创建时间: 2013 年 02 月 11 日 14:16
+-- 创建时间: 2013 年 02 月 24 日 14:48
 --
 
 DROP TABLE IF EXISTS `goods`;
@@ -33,9 +33,6 @@ CREATE TABLE IF NOT EXISTS `goods` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
   `classid` int(10) unsigned NOT NULL,
-  `price` float(7,3) NOT NULL,
-  `left` int(10) unsigned NOT NULL,
-  `sold` int(10) unsigned NOT NULL,
   `liked` int(10) unsigned NOT NULL,
   `info` varchar(240) NOT NULL,
   `inuse` tinyint(4) NOT NULL,
@@ -74,6 +71,26 @@ CREATE TABLE IF NOT EXISTS `goods_parent_class` (
   `name` varchar(24) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`),
+  KEY `id` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `goods_type`
+--
+-- 创建时间: 2013 年 02 月 24 日 14:48
+--
+
+DROP TABLE IF EXISTS `goods_type`;
+CREATE TABLE IF NOT EXISTS `goods_type` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `gid` int(10) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `price` float NOT NULL,
+  `left` int(11) NOT NULL,
+  `sold` int(10) NOT NULL,
+  PRIMARY KEY (`id`),
   KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
@@ -140,13 +157,12 @@ CREATE TABLE IF NOT EXISTS `order` (
 --
 -- 表的结构 `pic`
 --
--- 创建时间: 2013 年 02 月 11 日 14:18
+-- 创建时间: 2013 年 02 月 24 日 14:47
 --
 
 DROP TABLE IF EXISTS `pic`;
 CREATE TABLE IF NOT EXISTS `pic` (
   `gid` int(10) unsigned NOT NULL,
-  `type` tinyint(1) NOT NULL,
   `content` varchar(50) NOT NULL,
   KEY `gid` (`gid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -175,13 +191,12 @@ CREATE TABLE IF NOT EXISTS `session` (
 --
 -- 表的结构 `settings`
 --
--- 创建时间: 2013 年 02 月 07 日 14:15
--- 最后更新: 2013 年 02 月 07 日 14:15
+-- 创建时间: 2013 年 02 月 18 日 13:24
+-- 最后更新: 2013 年 02 月 18 日 13:24
 --
 
 DROP TABLE IF EXISTS `settings`;
 CREATE TABLE IF NOT EXISTS `settings` (
-  `logo` blob NOT NULL,
   `goods` blob NOT NULL,
   `info` blob NOT NULL,
   `contact` blob NOT NULL

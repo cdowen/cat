@@ -2,13 +2,7 @@
 
 class cat extends CI_Controller {
   
-  
-  private function _goods_callback($var){
-    if ($var['type'] = 1)
-      return false;
-    return true;
-  }
-  
+    
   /**
    * default controller for cat
    * index page
@@ -24,13 +18,7 @@ class cat extends CI_Controller {
     $info_data = $this->settings_m->get_info();
     
     $this->load->model('pic_m');
-    $fetured_goods = $this->settings_m->get_goods();
-    $pics=array();
-    foreach ($pergoods as $fetured_goods) {
-      $pic = $this->pic_m->get_pic_by_gid($pergoods);
-      array_filter($pic, "_goods_callback")//filter all big picture.
-      $pics[][$pergoods] = $pic[0]['content'];
-    }
+    $goods = $this->settings_m->get_goods();
     $index_data['fetured_pics'] = $pics;
     
     $this->load->view('common_head', $head_data);

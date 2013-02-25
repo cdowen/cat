@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2013 年 02 月 24 日 22:54
+-- 生成日期: 2013 年 02 月 25 日 23:14
 -- 服务器版本: 5.5.29-0ubuntu0.12.10.1
 -- PHP 版本: 5.4.6-1ubuntu1.1
 
@@ -157,15 +157,19 @@ CREATE TABLE IF NOT EXISTS `order` (
 --
 -- 表的结构 `pic`
 --
--- 创建时间: 2013 年 02 月 24 日 14:47
+-- 创建时间: 2013 年 02 月 25 日 14:48
 --
 
 DROP TABLE IF EXISTS `pic`;
 CREATE TABLE IF NOT EXISTS `pic` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `gid` int(10) unsigned NOT NULL,
+  `type` tinyint(1) NOT NULL COMMENT '图片是否公用',
   `content` varchar(50) NOT NULL,
-  KEY `gid` (`gid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`id`),
+  KEY `gid` (`gid`),
+  KEY `id` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
